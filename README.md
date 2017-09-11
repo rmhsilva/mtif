@@ -11,7 +11,7 @@ Usage:
 
 An example callback function:
 
-```
+```lisp
 (defun print-all-touches (finger-data timestamp frame)
   "Example callback which just prints all touches to *standard-output*"
   (format t "~A [~{~A~%  ~}]~%" (length finger-data) finger-data))
