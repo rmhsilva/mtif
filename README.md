@@ -32,6 +32,9 @@ The finger data struct has the following slots:
   ellipse-minor-axis -- Minor axis of the finger ellipsoid
 ```
 
+## Background Info
+
+See https://gist.github.com/rmhsilva/61cc45587ed34707da34818a76476e11 for info.
 
 ## License
 
