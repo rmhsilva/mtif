@@ -18,7 +18,7 @@
   "Signal whether things have been setup")
 
 (defvar *frame-count* 0
-  "The number of frames received")
+  "The number of frames received since last call to `start'")
 
 (defvar *frame-limit* 0
   "Maximum number of frames to process (ignored if nil)")
