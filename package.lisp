@@ -1,4 +1,5 @@
-;;;; mtif - package definitions
+;;;; MTIF
+;;;; ric@rmhsilva.com
 
 (defpackage :mtif
   (:use :cl :cffi)

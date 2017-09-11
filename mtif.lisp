@@ -1,6 +1,7 @@
-;;; MTIF - A MacOS MultiTouch Interface
-;;;
-;;
+;;;; MTIF
+;;;; ric@rmhsilva.com
+;;;;
+;;;; User API and FFI driver
 
 (in-package :mtif)
 
@@ -32,16 +33,16 @@
 
 (defstruct finger
   "Finger data"
-  (id)
-  (state)
-  (quality)
-  (pos-x)
-  (pos-y)
-  (vel-x)
-  (vel-y)
-  (ellipse-angle)
-  (ellipse-major-axis)
-  (ellipse-minor-axis))
+  (id "Numeric identifier for this finger")
+  (state "The finger state")
+  (quality "A measure of touch quality, or pressure")
+  (pos-x "Normalised X position")
+  (pos-y "Normalised Y position")
+  (vel-x "Normalised Y velocity")
+  (vel-y "Normalised Y velocity")
+  (ellipse-angle "Angle of the finger ellipsoid")
+  (ellipse-major-axis "Major axis of the finger ellipsoid")
+  (ellipse-minor-axis "Minor axis of the finger ellipsoid"))
 
 
 (defun get-readout (mtReadout slot1 slot2)

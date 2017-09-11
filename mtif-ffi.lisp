@@ -1,4 +1,7 @@
-;;; CFFI interface for the MacOS multitouch framework
+;;;; MTIF
+;;;; ric@rmhsilva.com
+;;;;
+;;;; CFFI definitions
 
 (in-package :mtif)
 
