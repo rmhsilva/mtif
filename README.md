@@ -3,8 +3,8 @@
 This is a Common Lisp interface to the Apple multitouch trackpad.
 
 Usage:
-- `(start #'callback-fn)` to start getting touch data.
-- `(stop)` to stop getting data!
+- `(mtif:start #'callback-fn)` to start getting touch data.
+- `(mtif:stop)` to stop getting data!
 
 
 ## Data Format
