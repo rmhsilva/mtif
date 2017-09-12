@@ -6,6 +6,7 @@ Usage:
 - `(mtif:start #'callback-fn)` to start getting touch data.
 - `(mtif:stop)` to stop getting data!
 
+Calling `#'start` spawns a thread which repeatedly calls `#'callback-fn`, passing the latest "frame" of multitouch data. No procesing is done -- you'll just get a list of finger data. If you want gesture recognition, watch [this repo](https://github.com/rmhsilva/cl-gestures).
 
 ## Data Format
 
