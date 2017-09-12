@@ -6,7 +6,7 @@ Usage:
 - `(mtif:start #'callback-fn)` to start getting touch data.
 - `(mtif:stop)` to stop getting data!
 
-Calling `#'start` spawns a thread which repeatedly calls `#'callback-fn`, passing the latest "frame" of multitouch data. No procesing is done -- you'll just get a list of finger data. If you want gesture recognition, watch [this repo](https://github.com/rmhsilva/cl-gestures).
+Calling `#'start` spawns a thread which repeatedly calls `#'callback-fn`, passing the latest "frame" of multitouch data. No processing is done -- you'll just get a list of finger data at each frame. If you want gesture recognition, watch [this repo](https://github.com/rmhsilva/cl-gestures).
 
 ## Data Format
 
@@ -35,7 +35,7 @@ The finger data struct has the following slots:
 
 ## Background Info
 
-See https://gist.github.com/rmhsilva/61cc45587ed34707da34818a76476e11 for info.
+This uses the "private" (undocumented) MacOS MultiTouch framework. See https://gist.github.com/rmhsilva/61cc45587ed34707da34818a76476e11 for more info.
 
 ## License
 
