@@ -38,7 +38,7 @@
   (quality "A measure of touch quality, or pressure")
   (pos-x "Normalised X position")
   (pos-y "Normalised Y position")
-  (vel-x "Normalised Y velocity")
+  (vel-x "Normalised X velocity")
   (vel-y "Normalised Y velocity")
   (ellipse-angle "Angle of the finger ellipsoid")
   (ellipse-major-axis "Major axis of the finger ellipsoid")
