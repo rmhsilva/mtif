@@ -11,6 +11,8 @@ passing the latest "frame" of multitouch data. No processing is done -- you'll
 just get a list of finger data at each frame. If you want gesture recognition,
 watch [this repo](https://github.com/rmhsilva/cl-gestures).
 
+Example: https://github.com/rmhsilva/mtif/tree/master/examples.
+
 ## Data Format
 
 An example callback function:
