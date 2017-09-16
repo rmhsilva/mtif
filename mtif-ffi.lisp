@@ -44,7 +44,7 @@
   (finger-id :int)
   (hand-id :int)                        ; always 1?
   (normalized (:struct mtReadout))
-  (quality :float)                      ; ~pressure
+  (size :float)
   (zero1 :int)
   (angle :float)
   (major-axis :float)

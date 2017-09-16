@@ -15,7 +15,7 @@
    ;; finger struct slots
    :finger-id
    :finger-state
-   :finger-quality
+   :finger-size
    :finger-pos-x
    :finger-pos-y
    :finger-vel-x

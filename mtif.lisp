@@ -35,7 +35,7 @@
   "Finger data"
   (id "Numeric identifier for this finger")
   (state "The finger state")
-  (quality "A measure of touch quality, or pressure")
+  (size "Measure of the area covered by the finger")
   (pos-x "Normalised X position")
   (pos-y "Normalised Y position")
   (vel-x "Normalised X velocity")
@@ -51,18 +51,18 @@
 (defmethod translate-from-foreign (ptr (type c-finger))
   "`ptr' is to c-finger type"
   (with-foreign-slots
-      ((path-id state quality normalized angle major-axis minor-axis)
+      ((path-id state size normalized angle major-axis minor-axis)
        ptr (:struct Finger))
     (make-finger
      :id path-id
      :state state
-     :quality quality
+     :size size
      :ellipse-angle angle
      :ellipse-major-axis major-axis
      :ellipse-minor-axis minor-axis
      :pos-x (get-readout normalized 'position 'x)
      :pos-y (get-readout normalized 'position 'y)
-     :vel-x (get-readout normalized 'velocity 'y)
+     :vel-x (get-readout normalized 'velocity 'x)
      :vel-y (get-readout normalized 'velocity 'y))))
 
 
@@ -80,7 +80,9 @@
     (unless (null *mtif-callback*)
       (let ((finger-data (loop for i from 0 to (1- nFingers)
                                collect (mem-aref data '(:struct Finger) i))))
-        (funcall (symbol-value '*mtif-callback*) finger-data timestamp frame))))
+        ;; User defined callback:
+        (funcall (symbol-value '*mtif-callback*)
+                 finger-data timestamp frame))))
   #|return |# 0)
 
 
