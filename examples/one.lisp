@@ -56,6 +56,7 @@
 
 
 (defun callback (finger-data timestamp frame)
+  (declare (ignore timestamp frame))
   (setf *fingers* finger-data))
 
 (defun run ()

@@ -74,16 +74,23 @@
      (timestamp :double)
      (frame :int))
   (declare (ignore device))
-  (when (or (not (numberp *frame-limit*))
-             (< *frame-count* *frame-limit*))
-    (incf *frame-count*)
-    (unless (null *mtif-callback*)
-      (let ((finger-data (loop for i from 0 to (1- nFingers)
-                               collect (mem-aref data '(:struct Finger) i))))
-        ;; User defined callback:
-        (funcall (symbol-value '*mtif-callback*)
-                 finger-data timestamp frame))))
-  #|return |# 0)
+  (prog1 0
+    (when (or (not (numberp *frame-limit*))
+              (< *frame-count* *frame-limit*))
+      (incf *frame-count*)
+      (unless (null *mtif-callback*)
+        (let ((finger-data (loop for i from 0 to (1- nFingers)
+                                 collect (mem-aref data '(:struct Finger) i))))
+          ;; User defined callback:
+          (restart-case
+              (funcall (symbol-value '*mtif-callback*)
+                       finger-data timestamp frame)
+            (ignore-it ()
+              :report "Ignore the MT callback error"
+              t)
+            (kill-mtif ()
+              :report "Stop MTIF"
+              (stop))))))))
 
 
 (defun print-all-touches (finger-data timestamp frame)
