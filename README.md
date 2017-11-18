@@ -1,5 +1,7 @@
 # MTIF
 
+[![Quicklisp](http://quickdocs.org/badge/mtif.svg)](http://quickdocs.org/mtif/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This is a Common Lisp interface to the Apple multitouch trackpad.
 
 Usage:
